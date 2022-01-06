@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <sdf version="1.6">
-  <world name="spraybot_world">
+  <world name="spraybot_empty_world">
 
     <include>
       <uri>model://ground_plane</uri>
@@ -20,3 +20,5 @@
         therefore we rotate the default frame 180 so that it would go back to ENU -->
         <heading_deg>180</heading_deg>
     </spherical_coordinates>
+  </world>
+</sdf>
