@@ -20,7 +20,7 @@
         therefore we rotate the default frame 180 so that it would go back to ENU -->
         <heading_deg>180</heading_deg>
     </spherical_coordinates>
-    
+
     <include>
       <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
       <name>'tree_0_0'</name>
