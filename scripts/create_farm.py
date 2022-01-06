@@ -68,13 +68,15 @@ if args.num_trees_row is not None:
 
 def make_row(y_ind, y_pos, num_trees_row):
     """
-    Generate the string sections for all of the trees in a row
+    Generate the string sections for all of the trees in a row.
 
-    Parameters:
+    Args:
+    ----
+        y_ind (int): the index of the row
         y_pos (float): the y position of the row
         num_trees_row (int): the num of trees in the row
-    """
 
+    """
     row_length = (num_trees_row - 1) * row_length_spacing
     for index, x_pos in enumerate(
         np.linspace(-row_length / 2, row_length / 2, num_trees_row)

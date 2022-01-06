@@ -1,13 +1,18 @@
 def get_tree_model(name, x, y, z):
-    """Get the two string sections needed to create an object in a world file.
+    """
+    Get the two string sections needed to create an object in a world file.
 
-    Parameters:
+    Args
+    ----
         name (str): the name of this vine
         x (float): x coordinate of the vine
         y (float): y coordinate of the vine
         z (float): z coordinate of the vine
-    Returns:
+
+    Returns
+    -------
         tree_str (str): the string to include a tree
+
     """
     tree_str = """
     <include>
