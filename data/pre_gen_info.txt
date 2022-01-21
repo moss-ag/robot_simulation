@@ -4,8 +4,9 @@
 
     <include>
       <uri>model://ground_plane</uri>
+       <color>255 0 0</color>
     </include>
-
+    
     <include>
       <uri>model://sun</uri>
     </include>
@@ -20,3 +21,5 @@
         therefore we rotate the default frame 180 so that it would go back to ENU -->
         <heading_deg>180</heading_deg>
     </spherical_coordinates>
+    
+

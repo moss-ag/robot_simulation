@@ -4,8 +4,9 @@
 
     <include>
       <uri>model://ground_plane</uri>
+       <color>255 0 0</color>
     </include>
-
+    
     <include>
       <uri>model://sun</uri>
     </include>
@@ -20,231 +21,110 @@
         therefore we rotate the default frame 180 so that it would go back to ENU -->
         <heading_deg>180</heading_deg>
     </spherical_coordinates>
+    
 
+
+    <model name='gp_0_0'>
+      <static>1</static>
+      <link name='gp_0_0'>
+        <visual name='gp_0_0'>
+          <pose>0.76200 -3.05000 0 0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>4.95300 2.28200</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/WoodFloor</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name='gp_0_1'>
+      <static>1</static>
+      <link name='gp_0_1'>
+        <visual name='gp_0_1'>
+          <pose>0.76200 3.05000 0 0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>4.95300 2.28200</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/WoodFloor</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
     <include>
       <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_0_0'</name>
-      <pose>-3.04800 -8.62000 0.00000 0 0</pose>
+      <name>'tree_0_0_0_0'</name>
+      <pose>-1.52400 -3.81000 0.00000 0 0</pose>
     </include>
     <include>
       <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_0_1'</name>
-      <pose>-1.52400 -8.62000 0.00000 0 0</pose>
+      <name>'tree_0_0_0_1'</name>
+      <pose>-2.28600 -2.29000 0.00000 0 0</pose>
     </include>
     <include>
       <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_0_2'</name>
-      <pose>0.00000 -8.62000 0.00000 0 0</pose>
+      <name>'tree_0_0_1_0'</name>
+      <pose>0.00000 -3.81000 0.00000 0 0</pose>
     </include>
     <include>
       <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_0_3'</name>
-      <pose>1.52400 -8.62000 0.00000 0 0</pose>
+      <name>'tree_0_0_1_1'</name>
+      <pose>0.76200 -2.29000 0.00000 0 0</pose>
     </include>
     <include>
       <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_0_4'</name>
-      <pose>3.04800 -8.62000 0.00000 0 0</pose>
+      <name>'tree_0_0_2_0'</name>
+      <pose>1.52400 -3.81000 0.00000 0 0</pose>
     </include>
     <include>
       <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_1_0'</name>
-      <pose>-3.04800 -7.10000 0.00000 0 0</pose>
+      <name>'tree_0_0_2_1'</name>
+      <pose>2.28600 -2.29000 0.00000 0 0</pose>
     </include>
     <include>
       <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_1_1'</name>
-      <pose>-1.52400 -7.10000 0.00000 0 0</pose>
+      <name>'tree_0_1_0_0'</name>
+      <pose>-1.52400 2.29000 0.00000 0 0</pose>
     </include>
     <include>
       <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_1_2'</name>
-      <pose>0.00000 -7.10000 0.00000 0 0</pose>
+      <name>'tree_0_1_0_1'</name>
+      <pose>-2.28600 3.81000 0.00000 0 0</pose>
     </include>
     <include>
       <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_1_3'</name>
-      <pose>1.52400 -7.10000 0.00000 0 0</pose>
+      <name>'tree_0_1_1_0'</name>
+      <pose>0.00000 2.29000 0.00000 0 0</pose>
     </include>
     <include>
       <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_1_4'</name>
-      <pose>3.04800 -7.10000 0.00000 0 0</pose>
+      <name>'tree_0_1_1_1'</name>
+      <pose>0.76200 3.81000 0.00000 0 0</pose>
     </include>
     <include>
       <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_2_0'</name>
-      <pose>-3.04800 -5.57000 0.00000 0 0</pose>
+      <name>'tree_0_1_2_0'</name>
+      <pose>1.52400 2.29000 0.00000 0 0</pose>
     </include>
     <include>
       <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_2_1'</name>
-      <pose>-1.52400 -5.57000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_2_2'</name>
-      <pose>0.00000 -5.57000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_2_3'</name>
-      <pose>1.52400 -5.57000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_2_4'</name>
-      <pose>3.04800 -5.57000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_3_0'</name>
-      <pose>-3.04800 -4.05000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_3_1'</name>
-      <pose>-1.52400 -4.05000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_3_2'</name>
-      <pose>0.00000 -4.05000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_3_3'</name>
-      <pose>1.52400 -4.05000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_3_4'</name>
-      <pose>3.04800 -4.05000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_4_0'</name>
-      <pose>-3.04800 -2.52000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_4_1'</name>
-      <pose>-1.52400 -2.52000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_4_2'</name>
-      <pose>0.00000 -2.52000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_4_3'</name>
-      <pose>1.52400 -2.52000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_4_4'</name>
-      <pose>3.04800 -2.52000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_5_0'</name>
-      <pose>-3.04800 2.05000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_5_1'</name>
-      <pose>-1.52400 2.05000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_5_2'</name>
-      <pose>0.00000 2.05000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_5_3'</name>
-      <pose>1.52400 2.05000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_5_4'</name>
-      <pose>3.04800 2.05000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_6_0'</name>
-      <pose>-3.04800 3.57000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_6_1'</name>
-      <pose>-1.52400 3.57000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_6_2'</name>
-      <pose>0.00000 3.57000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_6_3'</name>
-      <pose>1.52400 3.57000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_6_4'</name>
-      <pose>3.04800 3.57000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_7_0'</name>
-      <pose>-3.04800 5.10000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_7_1'</name>
-      <pose>-1.52400 5.10000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_7_2'</name>
-      <pose>0.00000 5.10000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_7_3'</name>
-      <pose>1.52400 5.10000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_7_4'</name>
-      <pose>3.04800 5.10000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_8_0'</name>
-      <pose>-3.04800 6.62000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_8_1'</name>
-      <pose>-1.52400 6.62000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_8_2'</name>
-      <pose>0.00000 6.62000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_8_3'</name>
-      <pose>1.52400 6.62000 0.00000 0 0</pose>
-    </include>
-    <include>
-      <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
-      <name>'tree_8_4'</name>
-      <pose>3.04800 6.62000 0.00000 0 0</pose>
+      <name>'tree_0_1_2_1'</name>
+      <pose>2.28600 3.81000 0.00000 0 0</pose>
     </include>
   </world>
 </sdf>
