@@ -6,10 +6,9 @@ from get_plane_model import get_plane_model
 
 from get_tree_model import get_tree_model
 
-import numpy as np
-
 import random
 
+import numpy as np
 
 
 # SET THESE VARIABLES
