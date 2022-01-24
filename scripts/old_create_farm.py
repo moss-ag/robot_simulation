@@ -15,12 +15,7 @@ gazebo_left_offset = 1
 
 # Gather user inputs
 parser = argparse.ArgumentParser(description='Gazebo Farm World Creator')
-parser.add_argument(
-    '--num_blocks',
-    '-nb',
-    type=int,
-    default=1,
-)
+parser.add_argument('--num_blocks', '-nb', type=int, default=1)
 parser.add_argument(
     '--num_rows',
     '-nr',
