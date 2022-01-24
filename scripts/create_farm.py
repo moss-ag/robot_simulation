@@ -1,9 +1,13 @@
-from itertools import zip_longest
 import argparse
-import numpy as np
 import random
-from get_tree_model import get_tree_model
+
+from itertools import zip_longest
+
+import numpy as np
+
 from get_plane_model import get_plane_model
+from get_tree_model import get_tree_model
+
 
 
 # ----- SET THESE VARIABLES ------
