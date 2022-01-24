@@ -1,9 +1,10 @@
-from get_tree_model import get_tree_model
 from itertools import zip_longest
-from get_plane_model import get_plane_model
-import numpy as np
 import argparse
+import numpy as np
 import random
+from get_tree_model import get_tree_model
+from get_plane_model import get_plane_model
+
 
 # ----- SET THESE VARIABLES ------
 
@@ -282,4 +283,4 @@ output_file.write(post_gen_info.read())
 post_gen_info.close()
 output_file.close()
 
-print("DONE")
+print('DONE')
