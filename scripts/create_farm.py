@@ -222,7 +222,12 @@ for rows in range(len(y_a)):
                 x_pos_m = [-shift_x + element for element in x_pos]
 
             # Staggering
-            # x_pos_m = [(x_pos[i]-row_width_spacing/2*staggered) if i % 2 != 0 else x_pos[i] for i in range(len(x_pos))]
+            # x_pos_m = [
+            #     (x_pos[i] - row_width_spacing / 2 * staggered)
+            #     if i % 2 != 0
+            #     else x_pos[i]
+            #     for i in range(len(x_pos))
+            # ]
             for i in range(len(x_pos_m)):
                 if i % 2 != 0:
                     if x_pos_m[i] < 0:

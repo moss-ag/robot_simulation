@@ -24,4 +24,3 @@ def get_tree_model(name, x, y, z):
     )
 
     return tree_str
-    
