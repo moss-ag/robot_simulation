@@ -1,7 +1,6 @@
 from get_tree_model import get_tree_model
 from itertools import zip_longest
-import matplotlib.pyplot as plt
-from get_plane_model import *
+from get_plane_model import get_plane_model
 import numpy as np
 import argparse
 import random
