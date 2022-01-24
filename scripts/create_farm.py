@@ -1,16 +1,18 @@
 import argparse
-import random
 
 from itertools import zip_longest
 
-import numpy as np
-
 from get_plane_model import get_plane_model
+
 from get_tree_model import get_tree_model
 
+import numpy as np
+
+import random
 
 
-# ----- SET THESE VARIABLES ------
+
+# SET THESE VARIABLES
 
 FT_TO_M = 0.3048
 row_width_spacing = 5 * FT_TO_M
