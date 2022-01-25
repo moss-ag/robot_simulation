@@ -89,8 +89,6 @@ if args.num_trees_row is not None:
 
 
 # Finding First co-ordinate
-
-
 def compute_grid_one(blocks):
     n = 1
     while True:
@@ -151,8 +149,6 @@ for br in b_cords:
         bl = bl + 1
     y_a.append(y_positions)
 
-# print(y_a)
-
 # Shifting to keep origin at center of farm
 for rows in range(len(y_a)):
     shift = (y_a[rows][-1] + y_a[rows][0]) / 2
@@ -163,7 +159,7 @@ for rows in range(len(y_a)):
 # Tree Strings
 def make_row(rid, cid, tree_r, idx, x_pos, y_pos):
     name = 'tree_{}_{}_{}_{}'.format(rid, cid, tree_r, idx)
-    # Block_row, Block_col, Tree_row_in_that_block, Tree_id
+    # tree_BlockRowNumber_BlockColNumber_TreeRowNumberInThatBlock_TreeNumberInThatRow
     tree_str = get_tree_model(name=name, x=x_pos, y=y_pos - gazebo_left_offset, z=0)
     tree_strings.append(tree_str)
 
