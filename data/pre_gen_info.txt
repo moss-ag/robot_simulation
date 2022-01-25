@@ -5,7 +5,7 @@
     <include>
       <uri>model://ground_plane</uri>
     </include>
-
+    
     <include>
       <uri>model://sun</uri>
     </include>
@@ -20,3 +20,5 @@
         therefore we rotate the default frame 180 so that it would go back to ENU -->
         <heading_deg>180</heading_deg>
     </spherical_coordinates>
+
+    <!-- tree_BlockRowNumber_BlockColNumber_TreeRowNumberInThatBlock_TreeNumberInThatRow -->
