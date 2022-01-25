@@ -21,6 +21,8 @@
         <heading_deg>180</heading_deg>
     </spherical_coordinates>
 
+    <!-- tree_BlockRowNumber_BlockColNumber_TreeRowNumberInThatBlock_TreeNumberInThatRow -->
+
     <include>
       <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
       <name>'tree_0_0_0_0'</name>
