@@ -162,7 +162,7 @@ for rows in range(len(y_a)):
 
 # Tree Strings
 def make_row(rid, cid, tree_r, idx, x_pos, y_pos):
-    name = 'tree_{}_{}_{}_{}'.format(rid, cid, tree_r, idx)
+    name = 'tree_{}_{}_{}_{}'.format(rid, cid, tree_r, idx) 
     tree_str = get_tree_model(name=name, x=x_pos, y=y_pos - gazebo_left_offset, z=0)
     tree_strings.append(tree_str)
 

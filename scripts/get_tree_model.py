@@ -18,7 +18,7 @@ def get_tree_model(name, x, y, z):
     <include>
       <uri>https://fuel.ignitionrobotics.org/1.0/shrijitsingh99/models/Juniper Tree</uri>
       <name>'{}'</name>
-      <pose>{:.5f} {:.5f} {:.5f} 0 0</pose>
+      <pose>{:.5f} {:.5f} {:.5f} 0 0 0</pose>
     </include>""".format(
         name, x, y, z
     )
