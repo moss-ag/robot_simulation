@@ -248,10 +248,6 @@ for rows in range(len(y_a)):
             elif tr == ((args.num_trees_row[rows * len(b_cords[rows]) + ind]) - 1):
                 x2, y2 = x_pos_m[-1], y_pos_m[-1]
 
-            # print(rows,ind,tr)
-            # print(x_pos_m)
-            # print(y_pos_m)
-
             for i in range(0, len(x_pos_m)):
                 make_row(
                     rid=rows,
