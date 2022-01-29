@@ -8,6 +8,8 @@ from get_plane_model import get_plane_model
 
 from get_tree_model import get_tree_model
 
+from write_waypoints import write_waypoints
+
 import numpy as np
 
 # SET THESE VARIABLES
@@ -24,7 +26,7 @@ block_offset = (
     0
 )  # Distance in meters (ideal = 3) to add block offset, by default odd no. of blocks are staggered
 staggered = 0  # Make zero to disable staggered rows, 1 to enable
-mud = 0
+mud = 0  # Make zero to disable adding mud, 1 to enable
 
 # ----- -------------- -----------
 
@@ -88,7 +90,7 @@ if args.num_trees_row is not None:
         args.num_trees_row = np.repeat(args.num_trees_row, args.num_blocks)
 
 
-# Finding First co-ordinate
+# Finding first co-ordinate
 def compute_grid_one(blocks):
     n = 1
     while True:
@@ -138,23 +140,32 @@ shift_x = (max(rl[-1]) + (len(b_cords) - 1) * block_to_block_spacing) / 2
 # Finding y co-ordinates of trees
 y_a = []
 bl = 0
+y_mid_all = []
+
 for br in b_cords:
     y_pos = 0
     y_positions = []
+    y_mid = []
     for bc in br:
         for row in range(args.num_rows[bl]):
             y_positions.append(y_pos)
+            if row < args.num_rows[bl] - 1:
+                y_mid.append(y_pos + row_width_spacing / 2)
             y_pos += row_width_spacing
         y_pos = y_pos - row_width_spacing + block_to_block_spacing
         bl = bl + 1
     y_a.append(y_positions)
+    y_mid_all.append(y_mid)
+
 
 # Shifting to keep origin at center of farm
 for rows in range(len(y_a)):
     shift = (y_a[rows][-1] + y_a[rows][0]) / 2
+    shift_mid = (y_mid_all[rows][-1] + y_mid_all[rows][0]) / 2
     shifted_y_positions = [round(yy - shift, 2) for yy in y_a[rows]]
+    shifted_y_positions_m = [round(ymid - shift_mid, 2) for ymid in y_mid_all[rows]]
     y_a[rows] = shifted_y_positions
-
+    y_mid_all[rows] = shifted_y_positions_m
 
 # Tree Strings
 def make_row(rid, cid, tree_r, idx, x_pos, y_pos):
@@ -190,6 +201,33 @@ def make_plane(rid, cid, xo, yo, xt, yt):
     plane_strings.append(plane_str)
 
 
+# Finding y co-ordinate of waypoint
+y_waypoint = []
+
+for rows in range(len(b_cords)):
+    ind = 0
+    while ind < len(b_cords[rows]):
+
+        start = ind * (args.num_rows[rows * len(b_cords[rows]) + ind - 1] - 1)
+        end = start + args.num_rows[rows * len(b_cords[rows]) + ind] - 1
+
+        y_pos = y_mid_all[rows][start:end]
+
+        y_waypoint.append(y_pos)
+        ind = ind + 1
+
+
+# Finding x co-ordinate of waypoint
+x_waypoint = []
+
+
+def x_block_limit(xo, yo, xt, yt):
+    if xo < 0:
+        x_waypoint.append([xt, xo])
+    else:
+        x_waypoint.append([xo, xt])
+
+
 # Finding x co-ordinates of trees
 for rows in range(len(y_a)):
     ind = 0
@@ -202,6 +240,7 @@ for rows in range(len(y_a)):
             end = start + args.num_rows[rows * len(b_cords[rows]) + ind]
 
             y_pos = y_a[rows][start:end]
+
             y_pos_m = [
                 (tr * slope) + (rows * block_offset + element) for element in y_pos
             ]
@@ -257,8 +296,11 @@ for rows in range(len(y_a)):
         if mud == 1:
             make_plane(rows, ind, x1, y1, x2, y2)
 
+        x_block_limit(x1, y1, x2, y2)
         ind = ind + 1
 
+# Write waypoints
+write_waypoints(x_waypoint, y_waypoint)
 
 pre_gen_info = open('../data/pre_gen_info.txt', 'r')
 post_gen_info = open('../data/post_gen_info.txt', 'r')
