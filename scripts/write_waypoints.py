@@ -4,9 +4,8 @@ import numpy as np
 
 import matplotlib.pyplot as plt
 
-from icecream import ic
 
-def write_waypoints(x, y, sl, numtrees, nvx,nvy):
+def write_waypoints(x, y, sl, numtrees, nvx, nvy):
 
     filename = 'waypoints.csv'
     cordsx = []
@@ -19,19 +18,24 @@ def write_waypoints(x, y, sl, numtrees, nvx,nvy):
         x_pb = np.linspace(start=x_start, stop=x_end, num=num_points)
 
         for by in y[bx]:
-            
+
             if sl == 0:
                 y_pb = np.repeat([by], num_points, axis=0)
                 coordinates = [list(x_pb), list(y_pb)]
             else:
-                if x_end<0:
-                    y_pb = np.linspace(by,by-sl*(numtrees[bx]-1), num_points, axis=0)+2.5
+                if x_end < 0:
+                    y_pb = (
+                        np.linspace(
+                            by, by - sl * (numtrees[bx] - 1), num_points, axis=0
+                        )
+                        + 2.5
+                    )
                     coordinates = [list(x_pb), list(y_pb)]
-                    ic(y_pb)
                 else:
-                    y_pb = np.linspace(by,by+sl*(numtrees[bx]-1), num_points, axis=0)
+                    y_pb = np.linspace(
+                        by, by + sl * (numtrees[bx] - 1), num_points, axis=0
+                    )
                     coordinates = [list(x_pb), list(y_pb)]
-                    ic(y_pb)
 
             with open(filename, 'a') as csvfile:
                 # creating a csv writer object
