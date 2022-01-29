@@ -1,8 +1,8 @@
 import csv
 
-import numpy as np
-
 import matplotlib.pyplot as plt
+
+import numpy as np
 
 
 def write_waypoints(x, y, sl, numtrees, nvx, nvy):
