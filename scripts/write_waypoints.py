@@ -5,8 +5,7 @@ import numpy as np
 
 def write_waypoints(x, y):
 
-    fields = ['X', 'Y']
-    filename = "waypoints.csv"
+    filename = 'waypoints.csv'
 
     for bx in range(0, len(x)):
         x_start = x[bx][0]
