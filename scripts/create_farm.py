@@ -12,17 +12,19 @@ import numpy as np
 
 from write_waypoints import write_waypoints
 
+from icecream import ic
+
 
 # SET THESE VARIABLES
 
-FT_TO_M = 0.3048
+FT_TO_M = 1 #0.3048
 row_width_spacing = 5 * FT_TO_M
 row_length_spacing = 5 * FT_TO_M
 block_to_block_spacing = 15 * FT_TO_M
 
 mean = 0  # Gaussian noise
 sigma = 0.0  # Gaussian noise (ideal = 0.2, 0 to disable noise addition)
-slope = 0  # To make rows slant (ideal = 0.2, 0 for straight rows)
+slope = 0.5 # To make rows slant (ideal = 0.2, 0 for straight rows)
 block_offset = (
     0
 )  # Distance in meters (ideal = 3) to add block offset, by default odd no. of blocks are staggered
@@ -33,6 +35,8 @@ mud = 0  # Make zero to disable adding mud, 1 to enable
 
 tree_strings = []
 plane_strings = []
+nav_x = []
+nav_y = []
 
 # Gazebo coordinates are offset; everything needs to be shifted left
 gazebo_left_offset = 0
@@ -168,6 +172,7 @@ for rows in range(len(y_a)):
     y_a[rows] = shifted_y_positions
     y_mid_all[rows] = shifted_y_positions_m
 
+ic(y_mid_all)
 
 # Tree Strings
 def make_row(rid, cid, tree_r, idx, x_pos, y_pos):
@@ -223,13 +228,13 @@ for rows in range(len(b_cords)):
 x_waypoint = []
 
 
-def x_block_limit(xo, yo, xt, yt):
+def x_block_limit(xo, xt):
     if xo < 0:
         x_waypoint.append([xt, xo])
     else:
         x_waypoint.append([xo, xt])
 
-
+ic(y_a)
 # Finding x co-ordinates of trees
 for rows in range(len(y_a)):
     ind = 0
@@ -242,11 +247,9 @@ for rows in range(len(y_a)):
             end = start + args.num_rows[rows * len(b_cords[rows]) + ind]
 
             y_pos = y_a[rows][start:end]
-
             y_pos_m = [
                 (tr * slope) + (rows * block_offset + element) for element in y_pos
             ]
-
             x_pos = [
                 (tr * row_width_spacing) + abs(random.gauss(mean, sigma))
                 for y_pos in y_pos_m
@@ -284,6 +287,10 @@ for rows in range(len(y_a)):
                 x1, y1 = x_pos_m[0], y_pos_m[0]
             elif tr == ((args.num_trees_row[rows * len(b_cords[rows]) + ind]) - 1):
                 x2, y2 = x_pos_m[-1], y_pos_m[-1]
+            
+
+            nav_x.append(x_pos_m)
+            nav_y.append(y_pos_m)
 
             for i in range(0, len(x_pos_m)):
                 make_row(
@@ -298,11 +305,11 @@ for rows in range(len(y_a)):
         if mud == 1:
             make_plane(rows, ind, x1, y1, x2, y2)
 
-        x_block_limit(x1, y1, x2, y2)
+        x_block_limit(x1, x2)
         ind = ind + 1
 
 # Write waypoints
-write_waypoints(x_waypoint, y_waypoint)
+write_waypoints(x_waypoint, y_waypoint, slope,args.num_trees_row, nav_x, nav_y)
 
 pre_gen_info = open('../data/pre_gen_info.txt', 'r')
 post_gen_info = open('../data/post_gen_info.txt', 'r')
