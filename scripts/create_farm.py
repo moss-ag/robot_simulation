@@ -167,7 +167,7 @@ for rows in range(len(y_a)):
     shifted_y_positions_m = [round(ymid - shift_mid, 2) for ymid in y_mid_all[rows]]
     y_a[rows] = shifted_y_positions
     y_mid_all[rows] = shifted_y_positions_m
-   
+
 
 # Tree Strings
 def make_row(rid, cid, tree_r, idx, x_pos, y_pos):
