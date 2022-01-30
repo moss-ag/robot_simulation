@@ -31,6 +31,18 @@ ros2 launch spraybot_bringup simulation.launch.py
 
 Refer: https://docs.google.com/document/d/1zr_KFhjDdrWiT50Gsbopc0Ot9QNOyAVU5Y1utftmqac/edit?usp=sharing for setting additional parameters. 
 
+## Waypoint Generation 
+
+The .csv file is opened in append mode, hence delete/rename the .csv before generating new set of points. 
+Waypoint generation supported only in: slope, gaussian noise and staggered mode. Does not work if block offset is given.
+Supports only: same number of trees and rows per block. See example below 
+
+Example command
+```
+python3 create_farm.py -nb 5 -nr 4 -ntr 6 -f ../worlds/spraybot.world ../
+``` 
+
 Only Gazebo Sim
 TODO
+
 
