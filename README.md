@@ -39,7 +39,7 @@ Supports only: same number of trees and rows per block. See example below
 
 Example command
 ```
-python3 create_farm.py -nb 5 -nr 4 -ntr 6 -f ../worlds/spraybot.world ../
+python3 create_farm.py -nb 5 -nr 4 -ntr 6 -f ../worlds/spraybot.world
 ``` 
 
 Only Gazebo Sim
