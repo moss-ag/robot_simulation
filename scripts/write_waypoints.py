@@ -24,11 +24,8 @@ def write_waypoints(x, y, sl, numtrees, nvx, nvy):
                 coordinates = [list(x_pb), list(y_pb)]
             else:
                 if x_end < 0:
-                    y_pb = (
-                        np.linspace(
-                            by, by - sl * (numtrees[bx] - 1), num_points, axis=0
-                        )
-                        + 2.5
+                    y_pb = np.linspace(
+                        by + sl * (numtrees[bx] - 1), by, num_points, axis=0
                     )
                     coordinates = [list(x_pb), list(y_pb)]
                 else:

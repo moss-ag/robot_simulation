@@ -22,7 +22,7 @@ block_to_block_spacing = 15 * FT_TO_M
 
 mean = 0  # Gaussian noise
 sigma = 0.0  # Gaussian noise (ideal = 0.2, 0 to disable noise addition)
-slope = 0.5  # To make rows slant (ideal = 0.2, 0 for straight rows)
+slope = 0.3  # To make rows slant (ideal = 0.2, 0 for straight rows)
 block_offset = (
     0
 )  # Distance in meters (ideal = 3) to add block offset, by default odd no. of blocks are staggered
