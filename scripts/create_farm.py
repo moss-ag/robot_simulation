@@ -22,11 +22,11 @@ block_to_block_spacing = 15 * FT_TO_M
 
 mean = 0  # Gaussian noise
 sigma = 0.0  # Gaussian noise (ideal = 0.2, 0 to disable noise addition)
-slope = 0.3  # To make rows slant (ideal = 0.2, 0 for straight rows)
+slope = 0.5  # To make rows slant (ideal = 0.2, 0 for straight rows)
 block_offset = (
     0
 )  # Distance in meters (ideal = 3) to add block offset, by default odd no. of blocks are staggered
-staggered = 0  # Make zero to disable staggered rows, 1 to enable
+staggered = 1  # Make zero to disable staggered rows, 1 to enable
 mud = 0  # Make zero to disable adding mud, 1 to enable
 
 # ----- -------------- -----------
@@ -226,6 +226,13 @@ x_waypoint = []
 
 
 def x_block_limit(xo, xt):
+
+    if staggered == 1:
+        if xt < 0:
+            xo = xo - row_width_spacing / 2
+        else:
+            xt = xt + row_width_spacing / 2
+
     if xo < 0:
         x_waypoint.append([xt, xo])
     else:
