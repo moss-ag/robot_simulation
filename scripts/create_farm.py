@@ -23,7 +23,7 @@ slope = 0  # To make rows slant (ideal = 0.2, 0 for straight rows)
 block_offset = (
     0
 )  # Distance in meters (ideal = 3) to add block offset, by default odd no. of blocks are staggered
-staggered = 0  # Make zero to disable staggered rows, 1 to enable
+staggered = 1  # Make zero to disable staggered rows, 1 to enable
 mud = 0
 
 # ----- -------------- -----------
